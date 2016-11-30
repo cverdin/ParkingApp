@@ -9,22 +9,27 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    DBHelper helper = new DBHelper(this);
+    signup helper = new signup();
+    String email;
+    String pass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void OnLoginClick(View view) {
 
+        EditText a = (EditText) findViewById(R.id.email_Main);
+        email = a.getText().toString();
+
+        EditText b = (EditText) findViewById(R.id.PasswordMain);
+        pass = b.getText().toString();
+
+
         if (view.getId() == R.id.login_button){
-            EditText a = (EditText) findViewById(R.id.email_Main);
-            String email = a.getText().toString();
-
-            EditText b = (EditText) findViewById(R.id.PasswordMain);
-            String pass = b.getText().toString();
-
 
             String password = helper.getPass(email);
 
@@ -34,17 +39,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, Location_Options.class);
 
                 startActivity(intent);
+
             }
             else {
-                Toast.makeText(this, "Incorrect Login Information!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Incorrect Login Information", Toast.LENGTH_SHORT).show();
             }
         }
     }
     public void OnSignupClick(View view){
     if(view.getId() == R.id.signup_button1) {
+
         Intent intent = new Intent(MainActivity.this, signup.class);
 
-        startActivity(intent);
+        startActivityForResult(intent, 0);
+
        }
     }
 }

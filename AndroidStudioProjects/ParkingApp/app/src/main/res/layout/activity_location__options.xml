@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -33,44 +34,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/old_structure"
+            android:onClick="onSelectionClick"
+            android:id="@+id/oldstruct"
+
           />
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/new_structure"/>
+            android:src="@drawable/new_structure"
+            android:onClick="onSelectionClick"
+            android:id="@+id/newstruct"
+            />
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/b"/>
+            android:src="@drawable/b"
+            android:onClick="onSelectionClick"
+            android:id="@+id/b_lot"/>
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/j"
+            android:onClick="onSelectionClick"
+            android:id="@+id/j_lot"
             />
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/u"
-            android:layout_gravity="end"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Park"
-            android:layout_gravity="center"
+            android:layout_gravity="end"
+            android:onClick="onSelectionClick"
+            android:id="@+id/u_lot"
             />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Leaving"
-            android:layout_gravity="center"
-            />
-
 
     </LinearLayout>
     </ScrollView>
